@@ -1,1 +1,80 @@
 projenv/
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+pip-wheel-metadata/
+
+# --- Virtual Environments ---
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+.conda/
+*.conda
+*/conda-meta/
+
+# --- Jupyter Notebook ---
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# --- VS Code ---
+.vscode/
+.code-workspace
+
+# --- Logs ---
+*.log
+logs/
+debug.log
+
+# --- Cache Files ---
+.cache/
+*.cache
+.pytest_cache/
+coverage/
+
+# --- Data Files (optional) ---
+data/
+datasets/
+*.csv
+*.tsv
+*.json
+*.pickle
+*.pkl
+*.h5
+*.pt
+*.model
+*.npz
+*.npy
+
+# --- Model Files (optional) ---
+models/
+checkpoints/
+*.sav
+*.hdf5
+*.onnx
+*.pb
+
+# --- Environment Files ---
+.env
+.env.*
+*.env
+*.ini
+
+# --- OS Specific ---
+.DS_Store
+Thumbs.db
+
+# --- IDE Specific ---
+.idea/
+*.iml
+
+# --- Docker ---
+*.pid
