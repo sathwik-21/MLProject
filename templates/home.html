@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Score Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 500px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 20px 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    select, input[type="number"] {
+      width: 100%;
+      padding: 8px 10px;
+      font-size: 14px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      background: #007bff;
+      color: #ffffff;
+    }
+    button:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Student Performance Form</h1>
+    <!-- Change action to your backend endpoint if needed -->
+    <form action="{{ url_for('predict_datapoint') }}" method="POST">
+      <!-- gender -->
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select name="gender" id="gender" required>
+          <option value="">-- Select --</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+
+      <!-- race_ethnicity -->
+      <div class="form-group">
+        <label for="race_ethnicity">Race / Ethnicity</label>
+        <select name="race_ethnicity" id="race_ethnicity" required>
+          <option value="">-- Select --</option>
+          <option value="group A">Group A</option>
+          <option value="group B">Group B</option>
+          <option value="group C">Group C</option>
+          <option value="group D">Group D</option>
+          <option value="group E">Group E</option>
+        </select>
+      </div>
+
+      <!-- parental_level_of_education -->
+      <div class="form-group">
+        <label for="parental_level_of_education">Parental Level of Education</label>
+        <select name="parental_level_of_education" id="parental_level_of_education" required>
+          <option value="">-- Select --</option>
+          <option value="some college">Some College</option>
+          <option value="associate's degree">Associate's Degree</option>
+          <option value="high school">High School</option>
+          <option value="some high school">Some High School</option>
+          <option value="bachelor's degree">Bachelor's Degree</option>
+          <option value="master's degree">Master's Degree</option>
+        </select>
+      </div>
+
+      <!-- lunch -->
+      <div class="form-group">
+        <label for="lunch">Lunch</label>
+        <select name="lunch" id="lunch" required>
+          <option value="">-- Select --</option>
+          <option value="free/reduced">Free</option>
+          <option value="standard">Standard</option>
+        </select>
+      </div>
+
+      <!-- test_preparation_course -->
+      <div class="form-group">
+        <label for="test_preparation_course">Test Preparation Course</label>
+        <select name="test_preparation_course" id="test_preparation_course" required>
+          <option value="">-- Select --</option>
+          <option value="none">None</option>
+          <option value="completed">Completed</option>
+        </select>
+      </div>
+
+      <!-- reading_score -->
+      <div class="form-group">
+        <label for="reading_score">Reading Score</label>
+        <input
+          type="number"
+          id="reading_score"
+          name="reading_score"
+          min="0"
+          max="100"
+          step="1"
+          required
+        />
+      </div>
+
+      <!-- writing_score -->
+      <div class="form-group">
+        <label for="writing_score">Writing Score</label>
+        <input
+          type="number"
+          id="writing_score"
+          name="writing_score"
+          min="0"
+          max="100"
+          step="1"
+          required
+        />
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <h2> The prediction is {{ results }}</h2>
+</body>
+</html>
