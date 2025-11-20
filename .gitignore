@@ -12,6 +12,7 @@ build/
 pip-wheel-metadata/
 
 # --- Virtual Environments ---
+.artifacts
 env/
 venv/
 .venv/
